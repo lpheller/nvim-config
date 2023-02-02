@@ -1,4 +1,4 @@
-local actions = require("telescope.actions")
+local actions = require "telescope.actions"
 
 -- vim.cmd([[
 --   highlight link TelescopePromptTitle PMenuSel
@@ -9,56 +9,60 @@ local actions = require("telescope.actions")
 --   highlight link TelescopeBorder CursorLineBg
 -- ]])
 
-require("telescope").setup({
-	defaults = {
+require("telescope").setup {
+    defaults = {
 
-		path_display = { truncate = 1 },
-		prompt_prefix = "   ",
-		selection_caret = "  ",
-		sorting_strategy = "ascending",
-		mappings = {
-			i = {
-				["<esc>"] = actions.close,
-				["<C-Down>"] = actions.cycle_history_next,
-				["<C-Up>"] = actions.cycle_history_prev,
-			},
-		},
-		file_ignore_patterns = { 
-			".git/",
-			"node_modules",
-			"dist/",
-			"public/js"
-		},
-	},
-	pickers = {
-		find_files = {
-			hidden = false,
-			previewer = false,
-			theme = "dropdown",
-		},
-		buffers = {
-			previewer = false,
-			layout_config = {
-				width = 80,
-			},
-		},
-		oldfiles = {
-			prompt_title = "History",
-		},
-		lsp_references = {
-			previewer = false,
-		},
-	},
-})
+        path_display = { truncate = 1 },
+        prompt_prefix = "   ",
+        selection_caret = "  ",
+        sorting_strategy = "ascending",
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+                ["<C-Down>"] = actions.cycle_history_next,
+                ["<C-Up>"] = actions.cycle_history_prev,
+                ["<Down>"] = actions.cycle_history_next,
+                ["<Up>"] = actions.cycle_history_prev,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+            },
+        },
+        file_ignore_patterns = {
+            ".git/",
+            "node_modules",
+            "dist/",
+            "public/js",
+        },
+    },
+    pickers = {
+        find_files = {
+            hidden = false,
+            previewer = false,
+            theme = "dropdown",
+        },
+        buffers = {
+            previewer = false,
+            layout_config = {
+                width = 80,
+            },
+        },
+        oldfiles = {
+            prompt_title = "History",
+        },
+        lsp_references = {
+            previewer = false,
+        },
+    },
+}
 
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("live_grep_args")
+require("telescope").load_extension "fzf"
+require("telescope").load_extension "live_grep_args"
 
 vim.keymap.set("n", "<leader>f", [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
 vim.keymap.set(
-	"n",
-	"<leader>F",
-	[[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]
+    "n",
+    "<leader>F",
+    [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]
 )
 vim.keymap.set("n", "<leader>b", [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
 vim.keymap.set("n", "<leader>g", [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])

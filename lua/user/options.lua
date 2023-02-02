@@ -25,7 +25,7 @@ vim.opt.smartcase = true
 
 vim.opt.list = true -- enable the below listchars
 vim.opt.listchars = { tab = "▸ ", trail = "·" }
-vim.opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
+vim.opt.fillchars:append { eob = " " } -- remove the ~ from end of buffer
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -42,8 +42,14 @@ vim.opt.signcolumn = "yes:2"
 
 vim.opt.undofile = true -- persistent undo
 vim.opt.backup = true -- automatically save a backup file
-vim.opt.backupdir:remove(".") -- keep backups out of the current directory
+vim.opt.backupdir:remove "." -- keep backups out of the current directory
 
 vim.opt.colorcolumn = "80" -- show line at 80 chars width
 
+vim.opt.cursorline = true -- highlight the current line
 -- vim.opt.winbar="%"
+
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldnestmax = 10
+-- vim.opt.nofoldenable = true
+-- vim.opt.foldlevel = 2

@@ -18,14 +18,14 @@ local diagnostics = {
 
 local diff = {
   "diff",
-  colored = false,
-  symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
+  colored = true,
+  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width,
 }
 
 local filetype = {
   "filetype",
-  icons_enabled = false,
+  icons_enabled = true,
 }
 
 local location = {
@@ -49,9 +49,9 @@ lualine.setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = {"branch"},
-    lualine_c = { diagnostics },
-    lualine_x = { diff, spaces, "encoding", filetype },
+    lualine_b = {"branch", diff},
+    lualine_c = { diagnostics, 'filename' },
+    lualine_x = { spaces, "encoding", filetype },
     lualine_y = { location },
     lualine_z = { "progress" },
   },

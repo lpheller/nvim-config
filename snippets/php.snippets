@@ -10,12 +10,6 @@ snippet prof "protected method"
 		${0}
 	}
 
-snippet prif "private method"
-	protected function ${1}(${2}): $3
-	{
-		${0}
-	}
-
 snippet testt "test method (prefix)"
 	public function test_${1}()
 	{
@@ -25,6 +19,12 @@ snippet testt "test method (prefix)"
 snippet testa "test method (annotation)"
 	/** @test */
 	public function ${1}()
+	{
+		${0}
+	}
+
+snippet pest "pest method (annotation)"
+	test('${1}')
 	{
 		${0}
 	}

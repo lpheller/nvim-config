@@ -1,121 +1,32 @@
-require("bufferline").setup({
-	options = {
-		indicator = {
-			icon = " ",
-		},
-		show_close_icon = false,
-		tab_size = 0,
-		max_name_length = 25,
-		offsets = {
-			{
-				filetype = "NvimTree",
-				text = "  Files",
-				highlight = "StatusLine",
-				text_align = "left",
-				padding = 1,
-			},
-		},
-		separator_style = "thin",
-		modified_icon = "",
-		custom_areas = {
-			-- left = function()
-			--   return {
-			--     { text = '    ', fg = '#8fff6d' },
-			--   }
-			-- end,
-		},
-	},
-	highlights = {
-		fill = {
-			fg = { attribute = "fg", highlight = "#ff0000" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		background = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		buffer_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		close_button = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		close_button_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		tab_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-
-		tab = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		tab_close = {
-			-- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
-			fg = { attribute = "fg", highlight = "TabLineSel" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-
-		duplicate_selected = {
-			fg = { attribute = "fg", highlight = "TabLineSel" },
-			bg = { attribute = "bg", highlight = "TabLineSel" },
-			italic = true,
-		},
-
-		duplicate_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-			italic = true,
-		},
-
-		duplicate = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-			italic = true,
-		},
-
-		modified = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		modified_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-
-		modified_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		separator = {
-			fg = { attribute = "bg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		separator_selected = {
-			fg = { attribute = "bg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-
-		indicator_selected = {
-			fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
-	},
-})
-
+require("bufferline").setup {
+    options = {
+        indicator = {
+            icon = " ",
+        },
+        show_close_icon = false,
+        tab_size = 0,
+        max_name_length = 25,
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "  Files",
+                highlight = "StatusLine",
+                text_align = "left",
+                padding = 5,
+            },
+        },
+        separator_style = "thin",
+        modified_icon = "",
+        custom_areas = {
+            -- left = function()
+            --   return {
+            --     { text = '    ', fg = '#8fff6d' },
+            --   }
+            -- end,
+        },
+    },
+    highlights = {},
+}
 
 -- vim.o.ls = 0
 vim.o.ch = 0
