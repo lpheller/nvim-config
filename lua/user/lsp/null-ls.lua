@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup {
     debug = false,
-    tmp_dir = "/tmp/null-ls",
+    tmp_dir = "/tmp",
     sources = {
         formatting.prettier.with {
             extra_filetypes = { "toml" },
@@ -23,9 +23,10 @@ null_ls.setup {
             end,
         },
         formatting.pint.with {
-            -- condition = function(utils)
-            --     return utils.root_has_file { "artisan",  }
-            -- end,
+            condition = function(utils)
+                return utils.root_has_file { "artisan",  }
+            end,
+            temp_dir = "/tmp",
         },
         formatting.stylua.with {},
     },
